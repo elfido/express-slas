@@ -25,7 +25,7 @@ describe("Using default server with default settings", function(){
 
 describe("Using default server with callback settings", function(done){
     before(function(){
-        let settings = {
+        var settings = {
             sla: 1000,
             cb: function(time){
                 assert.equal(true,false, `Callback should not be executed in a normal call, executed after ${time} ms`);
@@ -50,10 +50,10 @@ describe("Using default server with callback settings", function(done){
 
 
 describe("Using default server with callback settings, callback should be executed", function(complete){
-    let executed = false;
+    var executed = false;
     
     before(function(){
-        let settings = {
+        var settings = {
             sla: 90,
             logError: false,
             cb: function(time){
