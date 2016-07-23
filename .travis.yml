@@ -2,7 +2,8 @@ language: node_js
 node_js:
     - "6"
     - "6.1"
-    - "0.10"
+    - "4.0"
+    - "5.0"
     - "iojs"
 before_script:
     - npm install -g grunt-cli
