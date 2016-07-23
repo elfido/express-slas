@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/elfido/express-slas.svg?branch=master)](https://travis-ci.org/elfido/express-slas)
+[![Dependencies Status](https://david-dm.org/elfido/express-slas.svg)](https://david-dm.org/elfido/express-slas.svg)
 
 # express-slas
 SLA's handler for Express.JS
