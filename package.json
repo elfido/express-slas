@@ -1,0 +1,33 @@
+{
+  "name": "express-slas",
+  "version": "0.1.0",
+  "description": "SLA's handler for Express.JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elfido/express-slas.git"
+  },
+  "keywords": [
+    "middleware",
+    "express",
+    "slas"
+  ],
+  "author": "Fido <fidencio.garrido@gmail.com>",
+  "license": "\tGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/elfido/express-slas/issues"
+  },
+  "homepage": "https://github.com/elfido/express-slas#readme",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "mocha": "^2.5.3",
+    "morgan": "^1.7.0"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "on-headers": "^1.0.1"
+  }
+}
