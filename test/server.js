@@ -23,7 +23,7 @@ var createServer = function(port, options) {
     });
  
     return app.listen(port, function(){
-        console.log("server is running");
+        //console.log("Server is running");
     });
 };
  
