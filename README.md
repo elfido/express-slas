@@ -2,7 +2,7 @@
 [![Dependencies Status](https://david-dm.org/elfido/express-slas.svg)](https://david-dm.org/elfido/express-slas.svg)
 
 # express-slas
-SLA's handler for Express.JS
+SLA's (Service Level Agreement) handler for Express.JS
 
 ## What does it do?
 Set a max time for your API and this middleware will report back if the response time goes over it. It does not cancel the request, it just

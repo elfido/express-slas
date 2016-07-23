@@ -13,7 +13,8 @@
   "keywords": [
     "middleware",
     "express",
-    "slas"
+    "slas",
+    "service level agreement"
   ],
   "author": "Fido <fidencio.garrido@gmail.com>",
   "license": "\tGPL-3.0",
