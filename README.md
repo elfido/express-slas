@@ -18,6 +18,10 @@ You can pass a callback to perform custom actions such as sending notifications 
 As per Express nature, this middleware will evaluate the time between the time
 when the request comest to it and then when the headers are set.
 
+**Note** Remember that you can, and maybe you you should, apply this middleware to those routes that actually require to meet
+certain SLA (like get by id operations). That is not implmented in the library intentionally since express already supports
+that functionality out of the box (for instance http://stackoverflow.com/questions/15877342/nodejs-express-apply-session-middleware-to-some-routes). 
+
 ## Usage
 Install it:
 ```sh
@@ -61,7 +65,7 @@ app.listen(8080, function(){
 
 Options are passed in the initialization as an object with the following properties:
 
-### sla (number, default 1000ms, optional)
+### sla (time in milliseconds, default 1000ms, optional)
 Time in milliseconds. 
 
 ### logError (boolean, default true, optional)
@@ -72,6 +76,6 @@ Logs an error message to the console using ```console.error```
 Custom callback that will be executed asynchronously **after** the response is sent to the client.
 This callback is **only executed if the SLA is not met**. It passes the time spent as an argument. 
 
-### ToDo
-* Prevent console flood when a service keeps going over the SLA.
-* Implement streaming pluings
+### disableFor (time in seconds, default 10, optional)
+Defines a pause time after a SLA is not met, otherwise the library could cause a log flood with all the messages
+making the situation even worse. By default, it waits for 10 seconds before starting to check again.

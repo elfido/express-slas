@@ -27,7 +27,7 @@ describe("Using default server with callback settings", function(done){
     before(function(){
         let settings = {
             sla: 1000,
-            cb: function(time){
+            cb (time){
                 assert.equal(true,false, `Callback should not be executed in a normal call, executed after ${time} ms`);
                 done();
             }
@@ -55,8 +55,9 @@ describe("Using default server with callback settings, callback should be execut
     before(function(){
         let settings = {
             sla: 90,
+            disableFor: 5,
             logError: true,
-            cb: function(time){
+            cb (time){
                 console.log("Callback executed as expected");
                 executed = true;
             }
@@ -68,7 +69,7 @@ describe("Using default server with callback settings, callback should be execut
       app.close(); 
     });
     
-    describe("Starting server", function(){
+    describe("When SLA is not met and Callback is defined", function(){
         it("Should apply callback", function(done){
             request(app).get("/slow").expect(200).end(function(req, res){
                 setTimeout(function(){

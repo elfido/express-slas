@@ -26,5 +26,9 @@ var createServer = function(port, options) {
         //console.log("Server is running");
     });
 };
- 
-module.exports = createServer;
+
+if (require.main === module) {
+    createServer(8000, {sla: 10});
+} else {
+    module.exports = createServer;
+}
