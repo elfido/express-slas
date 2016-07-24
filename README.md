@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/elfido/express-slas.svg?branch=master)](https://travis-ci.org/elfido/express-slas)
 [![Dependencies Status](https://david-dm.org/elfido/express-slas.svg)](https://david-dm.org/elfido/express-slas.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4ef7ee9347094fcd8f8a687ccb26477f)](https://www.codacy.com/app/fidencio-garrido/express-slas?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=elfido/express-slas&amp;utm_campaign=Badge_Grade)
+![Node](https://img.shields.io/badge/node-4.0-brightgreen.svg)
+[![NPM](https://nodei.co/npm/express-slas.png)](https://nodei.co/npm/express-slas/)
 
 # express-slas
 SLA's (Service Level Agreement) handler for Express.JS

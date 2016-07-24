@@ -4,7 +4,7 @@
  * @author Fido <fidencio.garrido@gmail.com>
  */ 
  
-'use strict';
+"use strict";
 
 var _ = require("lodash");
 
@@ -20,7 +20,7 @@ function SLAS(options){
     let defOptions = {
         logError: true,
         sla: 1000,
-        cb: function(time){}
+        cb() {}
     },
     _options = (typeof options === "object") ? _.assign(defOptions, options) : defOptions;
     
@@ -29,10 +29,12 @@ function SLAS(options){
         res.on("finish",function(){
             var diff = (ptime() - start) / 1000;
             if(diff>_options.sla){
-                if (typeof _options.cb === "function")
+                if (typeof _options.cb === "function"){
                     process.nextTick( _options.cb, diff );
-                if (_options.logError)
+                }
+                if (_options.logError){
                     console.error(`ERROR: SLA error, expected <${_options.sla} ms, took ${diff.toFixed(2)} ms`);
+                }
             }
         });
         next();

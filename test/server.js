@@ -1,7 +1,7 @@
 /**
  * Used to test default behavior
  */
-'use strict';
+"use strict";
 
 var express = require("express"),
     slas = require("..");
