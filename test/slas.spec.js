@@ -55,7 +55,7 @@ describe("Using default server with callback settings, callback should be execut
     before(function(){
         let settings = {
             sla: 90,
-            logError: false,
+            logError: true,
             cb: function(time){
                 console.log("Callback executed as expected");
                 executed = true;
@@ -69,7 +69,7 @@ describe("Using default server with callback settings, callback should be execut
     });
     
     describe("Starting server", function(){
-        it("Should not apply callback", function(done){
+        it("Should apply callback", function(done){
             request(app).get("/slow").expect(200).end(function(req, res){
                 setTimeout(function(){
                     assert.equal(executed, true, "Callback is expected to be executed");
