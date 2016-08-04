@@ -12,6 +12,8 @@ SLA's (Service Level Agreement) handler for Express.JS
 Set a max time for your API and this middleware will report back if the response time goes over it. It does not cancel the request, it just
 logs an error by default (using ```console.error```).
 
+**0 dependencies**, all native, all fast.
+
 You can pass a callback to perform custom actions such as sending notifications to slack / hipchat / JIRA tickets. This callback will be executed
 **asynchronously**, you don't have to be worried about it delaying the response even more.
 
