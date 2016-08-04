@@ -6,14 +6,12 @@
  
 "use strict";
 
-var _ = require("lodash");
-
 /**
  * Returns process time
  */
-function ptime(){
-    let t = process.hrtime();
-    return t[0] * 1000000 + t[1] / 1000;
+function ptime(t){
+    let diff = process.hrtime(t);
+    return diff[0] + diff[1] / 1000000;
 }
 
 /**
@@ -32,13 +30,13 @@ function SLAS(options){
         cb() {}
     },
     paused = false,
-    _options = (typeof options === "object") ? _.assign(defOptions, options) : defOptions;
+    _options = (typeof options === "object") ? Object.assign(defOptions, options) : defOptions;
     
     return function(req, res, next){
         if (!paused){
-            var start = ptime();
+            var start = process.hrtime();
             res.on("finish",function(){
-                var diff = (ptime() - start) / 1000;
+                var diff = ptime(start);
                 if(diff>_options.sla){
                     if (typeof _options.cb === "function"){
                         process.nextTick( _options.cb, diff );
